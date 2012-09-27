@@ -4,7 +4,9 @@ use 5.010;
 use strict;
 use warnings;
 use Log::Any '$log';
+
 use Perinci::Access;
+use Perinci::Sub::Util qw(wrapres);
 
 # VERSION
 
@@ -65,8 +67,8 @@ sub use_riap_package {
 
     # try child_metas first
     my $res = $pa->request(child_metas => $url);
-    return [500, "Can't request action 'child_metas' on URL $url: ".
-                "$res->[0] - $res->[1]"]
+    return wrapres(
+        [500, "Can't request action 'child_metas' on URL $url: "], $res)
         unless $res->[0] == 200 || $res->[0] == 502;
 
     my @e;
@@ -81,8 +83,7 @@ sub use_riap_package {
     } else {
         # try 'list' + later 'meta' for each child
         $res = $pa->request(list => $url, {detail=>1});
-        return [500, "Can't request action 'list' on URL $url: ".
-                "$res->[0] - $res->[1]"]
+        return wrapres([500, "Can't request action 'list' on URL $url: "], $res)
             unless $res->[0] == 200;
         for my $r (@{$res->[2]}) {
             next unless $r->{type} eq 'function';
@@ -104,8 +105,8 @@ sub use_riap_package {
         # get metadata if not yet retrieved
         unless ($e->[2]) {
             $res = $pa->request(meta => $e->[1]);
-            return [500, "Can't request action 'meta' on URL $e->[1]: ".
-                        "$res->[0] - $res->[1]"]
+            return wrapres(
+                [500, "Can't request action 'meta' on URL $e->[1]: "], $res)
                 unless $res->[0] == 200;
             $e->[2] = $res->[2];
         }

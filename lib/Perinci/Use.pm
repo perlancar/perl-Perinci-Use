@@ -76,7 +76,7 @@ sub use_riap_package {
         my $metas = $res->[2];
         for my $u (keys %$metas) {
             my $meta = $metas->{$u};
-            next if $meta->{args};
+            next unless $meta->{args};
             my $sub = $u; $sub =~ s!.+/!!;
             push @e, [$sub, $u, $meta];
         }
@@ -94,7 +94,7 @@ sub use_riap_package {
 
     # check all specified entries 'include' must exist
     for my $s (@$inc) {
-        return [400, "'$_' does not exist under $url"]
+        return [400, "'$s' does not exist under $url"]
             unless grep {$s eq $_->[0]} @e;
     }
 

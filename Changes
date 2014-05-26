@@ -1,5 +1,12 @@
 Revision history for Perinci-Use
 
+0.04     2014-05-26 (SHARYANTO)
+
+         - No functional changes.
+
+         - App 'use experimental smartmatch' for perl 5.18+.
+
+
 0.03     2012-09-27 (SHARYANTO)
 
          - (Refactor) Use wrapres().

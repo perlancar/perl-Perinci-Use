@@ -14,8 +14,11 @@ use Perinci::Sub::Util qw(err);
 our %SPEC;
 
 $SPEC{use_riap_package} = {
+    v => 1.1,
     summary => 'Use a Riap package as if it was a local Perl module',
-    result => 'undef',
+    result => {
+        schema => 'undef',
+    },
     description => <<'_',
 
 "Use" a remote code package over Riap protocol as if it was a local Perl module.
@@ -51,7 +54,7 @@ _
         },
         include => {
             summary     => 'Do not load all children, only load specified ones',
-            schema => ['array*' => {of=>'str*'}],
+            schema => ['array*' => of=>'str*'],
         },
     },
 };

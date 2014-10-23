@@ -72,7 +72,7 @@ sub use_riap_package {
     # try child_metas first
     my $res = $pa->request(child_metas => $url);
     return err(500, "Can't request action 'child_metas' on URL $url", $res)
-        unless $res->[0] == 200 || $res->[0] == 502;
+        unless $res->[0] == 200 || $res->[0] == 501;
 
     my @e;
     if ($res->[0] == 200) {

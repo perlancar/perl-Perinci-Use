@@ -166,8 +166,6 @@ sub import {
 This module provides use_riap_package(), usually used as shown in Synopsis, a la
 Perl's use().
 
-This module uses L<Log::Any> for logging.
-
 
 =head1 FUNCTIONS
 

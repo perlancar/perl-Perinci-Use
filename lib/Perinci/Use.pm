@@ -149,7 +149,7 @@ sub import {
 }
 
 1;
-# ABSTRACT: Use a Riap package like a local Perl module
+# ABSTRACT:
 
 =head1 SYNOPSIS
 

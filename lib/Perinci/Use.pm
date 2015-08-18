@@ -168,11 +168,6 @@ This module provides use_riap_package(), usually used as shown in Synopsis, a la
 Perl's use().
 
 
-=head1 FUNCTIONS
-
-None are exported.
-
-
 =head1 SEE ALSO
 
 L<Perinci::Access>

@@ -7,7 +7,7 @@ use 5.010001;
 use strict;
 use warnings;
 use experimental 'smartmatch';
-use Log::Any::IfLOG '$log';
+use Log::ger;
 
 use Perinci::Access;
 use Perinci::Sub::Util qw(err);
@@ -61,7 +61,7 @@ _
 };
 sub use_riap_package {
     my %args   = @_;
-    $log->tracef("-> use_riap_package(%s)", \%args);
+    log_trace("-> use_riap_package(%s)", \%args);
     my $url    = $args{url}  or return [400, "Please specify url"];
     my $into   = $args{into} or return [400, "Please specify into"];
     return [500, "Invalid module name `$into`"]
@@ -127,7 +127,7 @@ sub use_riap_package {
         ${"$into\::SPEC"}{$e->[0]} = $e->[2];
     }
 
-    $log->tracef("<- use_riap_package()");
+    log_trace("<- use_riap_package()");
     [200, "OK"];
 }
 

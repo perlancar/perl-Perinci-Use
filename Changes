@@ -1,11 +1,11 @@
-0.07    2017-07-10 (PERLANCAR)
+0.07    2017-07-10  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- Replace Log::Any with Log::ger.
 
 
-0.06    2015-09-04 (PERLANCAR)
+0.06    2015-09-04  Released-By: PERLANCAR
 
 	- No functional changes.
 
@@ -14,21 +14,21 @@
 	  requirement.
 
 
-0.05    2015-08-18 (PERLANCAR)
+0.05    2015-08-18  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- Switch from Log::Any to Log::Any::IfLOG.
 
 
-0.04     2014-05-26 (SHARYANTO)
+0.04     2014-05-26  Released-By: SHARYANTO
 
          - No functional changes.
 
          - App 'use experimental smartmatch' for perl 5.18+.
 
 
-0.03     2012-09-27 (SHARYANTO)
+0.03     2012-09-27  Released-By: SHARYANTO
 
          - (Refactor) Use wrapres().
 
@@ -37,16 +37,16 @@
          - Add an example script.
 
 
-0.02     2012-02-23 (SHARYANTO)
+0.02     2012-02-23  Released-By: SHARYANTO
 
          - Rename distribution from Sub-Spec-Use to Perinci-Use. Follow Riap.
 
 
-0.02     2012-01-21 (SHARYANTO)
+0.02     2012-01-21  Released-By: SHARYANTO
 
          - No functional changes. Mark deprecated.
 
 
-0.01     2011-10-24 (SHARYANTO)
+0.01     2011-10-24  Released-By: SHARYANTO
 
          - First release.
